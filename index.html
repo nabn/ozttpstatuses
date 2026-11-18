@@ -99,6 +99,32 @@
     background: #f5f5f5;
   }
 
+  .swap {
+    display: grid;
+  }
+
+  .oz, .plain {
+    grid-area: 1 / 1;
+    transition: opacity 0.12s ease;
+  }
+
+  .plain {
+    opacity: 0;
+    color: #777;
+  }
+
+  tbody tr:hover .oz {
+    opacity: 0;
+  }
+
+  tbody tr:hover .plain {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .oz, .plain { transition: none; }
+  }
+
   @media (max-width: 600px) {
     body {
       margin: 30px auto;
@@ -120,7 +146,7 @@
   }
 </style>
 </head>
-<body>
+<body ontouchstart="">
 
 <header>
   <h1>🇦🇺 Aussie HTTP Codes</h1>
@@ -135,75 +161,75 @@
     </tr>
   </thead>
   <tbody>
-    <tr><td>100</td><td>YEAH NAH, HANG ON</td></tr>
-    <tr><td>101</td><td>RIGHTO, SWAPPIN OVER</td></tr>
-    <tr><td>102</td><td>SHE'S COMIN ALONG</td></tr>
-    <tr><td>103</td><td>HAVE A SQUIZ AT THIS FIRST</td></tr>
+    <tr><td>100</td><td><span class="swap"><span class="oz">YEAH NAH, HANG ON</span><span class="plain">Continue</span></span></td></tr>
+    <tr><td>101</td><td><span class="swap"><span class="oz">RIGHTO, SWAPPIN OVER</span><span class="plain">Switching Protocols</span></span></td></tr>
+    <tr><td>102</td><td><span class="swap"><span class="oz">SHE'S COMIN ALONG</span><span class="plain">Processing</span></span></td></tr>
+    <tr><td>103</td><td><span class="swap"><span class="oz">HAVE A SQUIZ AT THIS FIRST</span><span class="plain">Early Hints</span></span></td></tr>
 
-    <tr class="section-start"><td>200</td><td>SWEET AS</td></tr>
-    <tr><td>201</td><td>BEAUTY, SHE'S BUILT</td></tr>
-    <tr><td>202</td><td>NO WORRIES, I'LL GET TO IT</td></tr>
-    <tr><td>203</td><td>HEARD IT OFF ME COUSIN'S MATE</td></tr>
-    <tr><td>204</td><td>FUCK ALL HERE</td></tr>
-    <tr><td>205</td><td>WIPE IT AND START AGAIN</td></tr>
-    <tr><td>206</td><td>HERE'S A BIT OF IT</td></tr>
-    <tr><td>207</td><td>BIT OF EVERYTHING, MATE</td></tr>
-    <tr><td>208</td><td>ALREADY TOLD YA, DROPKICK</td></tr>
-    <tr><td>226</td><td>GAVE IT A BIT OF A TWEAK</td></tr>
+    <tr class="section-start"><td>200</td><td><span class="swap"><span class="oz">SWEET AS</span><span class="plain">OK</span></span></td></tr>
+    <tr><td>201</td><td><span class="swap"><span class="oz">BEAUTY, SHE'S BUILT</span><span class="plain">Created</span></span></td></tr>
+    <tr><td>202</td><td><span class="swap"><span class="oz">NO WORRIES, I'LL GET TO IT</span><span class="plain">Accepted</span></span></td></tr>
+    <tr><td>203</td><td><span class="swap"><span class="oz">HEARD IT OFF ME COUSIN'S MATE</span><span class="plain">Non-authoritative Information</span></span></td></tr>
+    <tr><td>204</td><td><span class="swap"><span class="oz">FUCK ALL HERE</span><span class="plain">No Content</span></span></td></tr>
+    <tr><td>205</td><td><span class="swap"><span class="oz">WIPE IT AND START AGAIN</span><span class="plain">Reset Content</span></span></td></tr>
+    <tr><td>206</td><td><span class="swap"><span class="oz">HERE'S A BIT OF IT</span><span class="plain">Partial Content</span></span></td></tr>
+    <tr><td>207</td><td><span class="swap"><span class="oz">BIT OF EVERYTHING, MATE</span><span class="plain">Multi-Status</span></span></td></tr>
+    <tr><td>208</td><td><span class="swap"><span class="oz">ALREADY TOLD YA, DROPKICK</span><span class="plain">Already Reported</span></span></td></tr>
+    <tr><td>226</td><td><span class="swap"><span class="oz">GAVE IT A BIT OF A TWEAK</span><span class="plain">IM Used</span></span></td></tr>
 
-    <tr class="section-start"><td>300</td><td>TAKE YER PICK</td></tr>
-    <tr><td>301</td><td>SHE'S MOVED TO QUEENSLAND</td></tr>
-    <tr><td>302</td><td>NAH, IT'S OVER HERE</td></tr>
-    <tr><td>303</td><td>GO HAVE A LOOK OVER THERE</td></tr>
-    <tr><td>304</td><td>SAME SHIT, DIFFERENT DAY</td></tr>
-    <tr><td>305</td><td>ASK YER MATE</td></tr>
-    <tr><td>307</td><td>PISS OFF OVER THERE, FOR NOW</td></tr>
-    <tr><td>308</td><td>PISS OFF OVER THERE FOR GOOD</td></tr>
+    <tr class="section-start"><td>300</td><td><span class="swap"><span class="oz">TAKE YER PICK</span><span class="plain">Multiple Choices</span></span></td></tr>
+    <tr><td>301</td><td><span class="swap"><span class="oz">SHE'S MOVED TO QUEENSLAND</span><span class="plain">Moved Permanently</span></span></td></tr>
+    <tr><td>302</td><td><span class="swap"><span class="oz">NAH, IT'S OVER HERE</span><span class="plain">Found</span></span></td></tr>
+    <tr><td>303</td><td><span class="swap"><span class="oz">GO HAVE A LOOK OVER THERE</span><span class="plain">See Other</span></span></td></tr>
+    <tr><td>304</td><td><span class="swap"><span class="oz">SAME SHIT, DIFFERENT DAY</span><span class="plain">Not Modified</span></span></td></tr>
+    <tr><td>305</td><td><span class="swap"><span class="oz">ASK YER MATE</span><span class="plain">Use Proxy</span></span></td></tr>
+    <tr><td>307</td><td><span class="swap"><span class="oz">PISS OFF OVER THERE, FOR NOW</span><span class="plain">Temporary Redirect</span></span></td></tr>
+    <tr><td>308</td><td><span class="swap"><span class="oz">PISS OFF OVER THERE FOR GOOD</span><span class="plain">Permanent Redirect</span></span></td></tr>
 
-    <tr class="section-start"><td>400</td><td>WHAT THE FUCK IS THIS</td></tr>
-    <tr><td>401</td><td>WHO THE FUCK ARE YOU</td></tr>
-    <tr><td>402</td><td>CASH ONLY, MATE</td></tr>
-    <tr><td>403</td><td>GET FUCKED</td></tr>
-    <tr><td>404</td><td>NOT FUCKIN HERE, MATE</td></tr>
-    <tr><td>405</td><td>CAN'T DO THAT, CHAMP</td></tr>
-    <tr><td>406</td><td>THAT'S NOT FUCKIN GOOD ENOUGH</td></tr>
-    <tr><td>407</td><td>SHOW YER ID TO THE BOUNCER</td></tr>
-    <tr><td>408</td><td>HURRY THE FUCK UP</td></tr>
-    <tr><td>409</td><td>MAKE UP YER FUCKIN MIND</td></tr>
-    <tr><td>410</td><td>IT'S CARKED IT</td></tr>
-    <tr><td>411</td><td>HOW FUCKIN LONG IS IT</td></tr>
-    <tr><td>412</td><td>DIDN'T READ THE FINE PRINT, EH</td></tr>
-    <tr><td>413</td><td>THAT'S A BIG FUCKIN UNIT</td></tr>
-    <tr><td>414</td><td>THAT'S A FUCKIN ESSAY, MATE</td></tr>
-    <tr><td>415</td><td>WHAT THE FUCK IS THAT THING</td></tr>
-    <tr><td>416</td><td>CAN'T REACH THAT FAR</td></tr>
-    <tr><td>417</td><td>NOT WHAT YA EXPECTED, EH</td></tr>
-    <tr><td>418</td><td>I'M A FUCKIN BILLY</td></tr>
-    <tr><td>421</td><td>WRONG FUCKIN BLOKE</td></tr>
-    <tr><td>422</td><td>I GET YA, BUT NAH</td></tr>
-    <tr><td>423</td><td>SHE'S LOCKED UP TIGHT</td></tr>
-    <tr><td>424</td><td>THE OTHER BLOKE STUFFED IT FIRST</td></tr>
-    <tr><td>425</td><td>HOLD YER FUCKIN HORSES</td></tr>
-    <tr><td>426</td><td>TIME FOR A NEW UTE</td></tr>
-    <tr><td>428</td><td>NOT WITHOUT A PERMIT, YA DON'T</td></tr>
-    <tr><td>429</td><td>STEADY ON</td></tr>
-    <tr><td>431</td><td>TOO MUCH CRAP UP TOP</td></tr>
-    <tr><td>444</td><td>HUNG UP ON YA</td></tr>
-    <tr><td>451</td><td>THE GUVMINT SAYS NAH</td></tr>
-    <tr><td>499</td><td>YA PISSED OFF BEFORE I FINISHED</td></tr>
+    <tr class="section-start"><td>400</td><td><span class="swap"><span class="oz">WHAT THE FUCK IS THIS</span><span class="plain">Bad Request</span></span></td></tr>
+    <tr><td>401</td><td><span class="swap"><span class="oz">WHO THE FUCK ARE YOU</span><span class="plain">Unauthorized</span></span></td></tr>
+    <tr><td>402</td><td><span class="swap"><span class="oz">CASH ONLY, MATE</span><span class="plain">Payment Required</span></span></td></tr>
+    <tr><td>403</td><td><span class="swap"><span class="oz">GET FUCKED</span><span class="plain">Forbidden</span></span></td></tr>
+    <tr><td>404</td><td><span class="swap"><span class="oz">NOT FUCKIN HERE, MATE</span><span class="plain">Not Found</span></span></td></tr>
+    <tr><td>405</td><td><span class="swap"><span class="oz">CAN'T DO THAT, CHAMP</span><span class="plain">Method Not Allowed</span></span></td></tr>
+    <tr><td>406</td><td><span class="swap"><span class="oz">THAT'S NOT FUCKIN GOOD ENOUGH</span><span class="plain">Not Acceptable</span></span></td></tr>
+    <tr><td>407</td><td><span class="swap"><span class="oz">SHOW YER ID TO THE BOUNCER</span><span class="plain">Proxy Authentication Required</span></span></td></tr>
+    <tr><td>408</td><td><span class="swap"><span class="oz">HURRY THE FUCK UP</span><span class="plain">Request Timeout</span></span></td></tr>
+    <tr><td>409</td><td><span class="swap"><span class="oz">MAKE UP YER FUCKIN MIND</span><span class="plain">Conflict</span></span></td></tr>
+    <tr><td>410</td><td><span class="swap"><span class="oz">IT'S CARKED IT</span><span class="plain">Gone</span></span></td></tr>
+    <tr><td>411</td><td><span class="swap"><span class="oz">HOW FUCKIN LONG IS IT</span><span class="plain">Length Required</span></span></td></tr>
+    <tr><td>412</td><td><span class="swap"><span class="oz">DIDN'T READ THE FINE PRINT, EH</span><span class="plain">Precondition Failed</span></span></td></tr>
+    <tr><td>413</td><td><span class="swap"><span class="oz">THAT'S A BIG FUCKIN UNIT</span><span class="plain">Payload Too Large</span></span></td></tr>
+    <tr><td>414</td><td><span class="swap"><span class="oz">THAT'S A FUCKIN ESSAY, MATE</span><span class="plain">Request-URI Too Long</span></span></td></tr>
+    <tr><td>415</td><td><span class="swap"><span class="oz">WHAT THE FUCK IS THAT THING</span><span class="plain">Unsupported Media Type</span></span></td></tr>
+    <tr><td>416</td><td><span class="swap"><span class="oz">CAN'T REACH THAT FAR</span><span class="plain">Requested Range Not Satisfiable</span></span></td></tr>
+    <tr><td>417</td><td><span class="swap"><span class="oz">NOT WHAT YA EXPECTED, EH</span><span class="plain">Expectation Failed</span></span></td></tr>
+    <tr><td>418</td><td><span class="swap"><span class="oz">I'M A FUCKIN BILLY</span><span class="plain">I'm a teapot</span></span></td></tr>
+    <tr><td>421</td><td><span class="swap"><span class="oz">WRONG FUCKIN BLOKE</span><span class="plain">Misdirected Request</span></span></td></tr>
+    <tr><td>422</td><td><span class="swap"><span class="oz">I GET YA, BUT NAH</span><span class="plain">Unprocessable Entity</span></span></td></tr>
+    <tr><td>423</td><td><span class="swap"><span class="oz">SHE'S LOCKED UP TIGHT</span><span class="plain">Locked</span></span></td></tr>
+    <tr><td>424</td><td><span class="swap"><span class="oz">THE OTHER BLOKE STUFFED IT FIRST</span><span class="plain">Failed Dependency</span></span></td></tr>
+    <tr><td>425</td><td><span class="swap"><span class="oz">HOLD YER FUCKIN HORSES</span><span class="plain">Too Early</span></span></td></tr>
+    <tr><td>426</td><td><span class="swap"><span class="oz">TIME FOR A NEW UTE</span><span class="plain">Upgrade Required</span></span></td></tr>
+    <tr><td>428</td><td><span class="swap"><span class="oz">NOT WITHOUT A PERMIT, YA DON'T</span><span class="plain">Precondition Required</span></span></td></tr>
+    <tr><td>429</td><td><span class="swap"><span class="oz">STEADY ON</span><span class="plain">Too Many Requests</span></span></td></tr>
+    <tr><td>431</td><td><span class="swap"><span class="oz">TOO MUCH CRAP UP TOP</span><span class="plain">Request Header Fields Too Large</span></span></td></tr>
+    <tr><td>444</td><td><span class="swap"><span class="oz">HUNG UP ON YA</span><span class="plain">Connection Closed Without Response</span></span></td></tr>
+    <tr><td>451</td><td><span class="swap"><span class="oz">THE GUVMINT SAYS NAH</span><span class="plain">Unavailable For Legal Reasons</span></span></td></tr>
+    <tr><td>499</td><td><span class="swap"><span class="oz">YA PISSED OFF BEFORE I FINISHED</span><span class="plain">Client Closed Request</span></span></td></tr>
 
-    <tr class="section-start"><td>500</td><td>SHE'S CACTUS</td></tr>
-    <tr><td>501</td><td>I DON'T FUCKIN DO THAT</td></tr>
-    <tr><td>502</td><td>THE OTHER BASTARD'S CACTUS</td></tr>
-    <tr><td>503</td><td>SHUT. GONE FISHIN</td></tr>
-    <tr><td>504</td><td>THE BASTARD'S NOT ANSWERIN</td></tr>
-    <tr><td>505</td><td>WHAT FUCKIN CENTURY ARE YA IN</td></tr>
-    <tr><td>506</td><td>THEY'RE BOTH ARGUIN AGAIN</td></tr>
-    <tr><td>507</td><td>THE UTE'S FULL</td></tr>
-    <tr><td>508</td><td>ROUND AND ROUND, YA DRONGO</td></tr>
-    <tr><td>510</td><td>GONNA NEED MORE THAN THAT</td></tr>
-    <tr><td>511</td><td>LOG IN TO THE SERVO WIFI FIRST</td></tr>
-    <tr><td>599</td><td>THE NBN'S FUCKED</td></tr>
+    <tr class="section-start"><td>500</td><td><span class="swap"><span class="oz">SHE'S CACTUS</span><span class="plain">Internal Server Error</span></span></td></tr>
+    <tr><td>501</td><td><span class="swap"><span class="oz">I DON'T FUCKIN DO THAT</span><span class="plain">Not Implemented</span></span></td></tr>
+    <tr><td>502</td><td><span class="swap"><span class="oz">THE OTHER BASTARD'S CACTUS</span><span class="plain">Bad Gateway</span></span></td></tr>
+    <tr><td>503</td><td><span class="swap"><span class="oz">SHUT. GONE FISHIN</span><span class="plain">Service Unavailable</span></span></td></tr>
+    <tr><td>504</td><td><span class="swap"><span class="oz">THE BASTARD'S NOT ANSWERIN</span><span class="plain">Gateway Timeout</span></span></td></tr>
+    <tr><td>505</td><td><span class="swap"><span class="oz">WHAT FUCKIN CENTURY ARE YA IN</span><span class="plain">HTTP Version Not Supported</span></span></td></tr>
+    <tr><td>506</td><td><span class="swap"><span class="oz">THEY'RE BOTH ARGUIN AGAIN</span><span class="plain">Variant Also Negotiates</span></span></td></tr>
+    <tr><td>507</td><td><span class="swap"><span class="oz">THE UTE'S FULL</span><span class="plain">Insufficient Storage</span></span></td></tr>
+    <tr><td>508</td><td><span class="swap"><span class="oz">ROUND AND ROUND, YA DRONGO</span><span class="plain">Loop Detected</span></span></td></tr>
+    <tr><td>510</td><td><span class="swap"><span class="oz">GONNA NEED MORE THAN THAT</span><span class="plain">Not Extended</span></span></td></tr>
+    <tr><td>511</td><td><span class="swap"><span class="oz">LOG IN TO THE SERVO WIFI FIRST</span><span class="plain">Network Authentication Required</span></span></td></tr>
+    <tr><td>599</td><td><span class="swap"><span class="oz">THE NBN'S FUCKED</span><span class="plain">Network Connect Timeout Error</span></span></td></tr>
   </tbody>
 </table>
 </div>
